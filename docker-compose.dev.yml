@@ -1,6 +1,5 @@
 version: "3.7"
 services:
-
   backend:
     image: python:3.6
     volumes:
@@ -31,7 +30,7 @@ services:
       - .:/src
       - node_modules:/src/frontend/node_modules
     ports:
-      - 3000:3000
+      - 3001:3000
     depends_on:
       - backend
     networks:

@@ -1,26 +1,16 @@
 <template>
-  <v-app-bar
-    app
-    clipped-left
-  >
+  <v-app-bar app clipped-left>
     <slot name="leftDrawerIcon" />
-    <nuxt-link
-      v-if="!isAuthenticated"
-      to="/"
-      style="line-height:0;"
-    >
+    <nuxt-link v-if="!isAuthenticated" to="/" style="line-height: 0">
       <img src="~/assets/icon.png" height="48">
     </nuxt-link>
-    <v-toolbar-title
-      v-if="!isAuthenticated"
-      class="ml-2 d-none d-sm-flex"
-    >
-      doccano
+    <v-toolbar-title v-if="!isAuthenticated" class="ml-2 d-none d-sm-flex">
+      Data-Upload
     </v-toolbar-title>
     <v-btn
       v-if="isAuthenticated && isIndividualProject"
       text
-      style="text-transform:none"
+      style="text-transform: none"
     >
       <v-icon small class="mr-1">
         mdi-hexagon-multiple
@@ -35,19 +25,12 @@
       text
       @click="$router.push(localePath('/projects'))"
     >
-      {{ $t('header.projects') }}
+      {{ $t("header.projects") }}
     </v-btn>
-    <v-menu
-      v-if="!isAuthenticated"
-      open-on-hover
-      offset-y
-    >
+    <v-menu v-if="!isAuthenticated" open-on-hover offset-y>
       <template v-slot:activator="{ on }">
-        <v-btn
-          text
-          v-on="on"
-        >
-          {{ $t('home.demoDropDown') }}
+        <v-btn text v-on="on">
+          {{ $t("home.demoDropDown") }}
           <v-icon>mdi-menu-down</v-icon>
         </v-btn>
       </template>
@@ -66,12 +49,9 @@
       outlined
       @click="$router.push(localePath('/auth'))"
     >
-      {{ $t('user.login') }}
+      {{ $t("user.login") }}
     </v-btn>
-    <v-menu
-      v-if="isAuthenticated"
-      offset-y
-    >
+    <v-menu v-if="isAuthenticated" offset-y>
       <template v-slot:activator="{ on }">
         <v-btn on icon v-on="on">
           <v-icon>mdi-dots-vertical</v-icon>
@@ -85,7 +65,7 @@
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>
-              {{ $t('user.signOut') }}
+              {{ $t("user.signOut") }}
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
