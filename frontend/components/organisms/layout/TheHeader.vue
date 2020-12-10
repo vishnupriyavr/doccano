@@ -2,7 +2,7 @@
   <v-app-bar app clipped-left>
     <slot name="leftDrawerIcon" />
     <nuxt-link v-if="!isAuthenticated" to="/" style="line-height: 0">
-      <img src="~/assets/icon.png" height="48">
+      <img src="~/assets/icon.png" height="48" />
     </nuxt-link>
     <v-toolbar-title v-if="!isAuthenticated" class="ml-2 d-none d-sm-flex">
       Data-Upload
@@ -12,9 +12,7 @@
       text
       style="text-transform: none"
     >
-      <v-icon small class="mr-1">
-        mdi-hexagon-multiple
-      </v-icon>
+      <v-icon small class="mr-1"> mdi-hexagon-multiple </v-icon>
       <span> {{ currentProject.name }}</span>
     </v-btn>
     <div class="flex-grow-1" />
@@ -25,12 +23,12 @@
       text
       @click="$router.push(localePath('/projects'))"
     >
-      {{ $t("header.projects") }}
+      {{ $t('header.projects') }}
     </v-btn>
     <v-menu v-if="!isAuthenticated" open-on-hover offset-y>
       <template v-slot:activator="{ on }">
         <v-btn text v-on="on">
-          {{ $t("home.demoDropDown") }}
+          {{ $t('home.demoDropDown') }}
           <v-icon>mdi-menu-down</v-icon>
         </v-btn>
       </template>
@@ -49,7 +47,7 @@
       outlined
       @click="$router.push(localePath('/auth'))"
     >
-      {{ $t("user.login") }}
+      {{ $t('user.login') }}
     </v-btn>
     <v-menu v-if="isAuthenticated" offset-y>
       <template v-slot:activator="{ on }">
@@ -65,7 +63,7 @@
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>
-              {{ $t("user.signOut") }}
+              {{ $t('user.signOut') }}
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
@@ -76,14 +74,9 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import TheColorModeSwitcher from '@/components/organisms/layout/TheColorModeSwitcher'
-import LocaleMenu from '@/components/organisms/layout/LocaleMenu'
 
 export default {
-  components: {
-    TheColorModeSwitcher,
-    LocaleMenu
-  },
+  components: {},
 
   data() {
     return {
