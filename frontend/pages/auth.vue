@@ -4,9 +4,7 @@
       <v-container class="fill-height" fluid>
         <v-row align="center" justify="center">
           <v-col cols="12" sm="8" md="4">
-            <login-form
-              :login="authenticateUser"
-            />
+            <login-form :login="authenticateUser" />
           </v-col>
         </v-row>
       </v-container>
@@ -15,16 +13,11 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
-import LoginForm from '@/components/organisms/auth/LoginForm'
+import ProjectList from '@/components/containers/projects/ProjectList'
 
 export default {
-  components: {
-    LoginForm
-  },
-
-  methods: {
-    ...mapActions('auth', ['authenticateUser'])
+  Components: {
+    ProjectList
   }
 }
 </script>

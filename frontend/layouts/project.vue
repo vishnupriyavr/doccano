@@ -6,26 +6,13 @@
       </template>
     </the-header>
 
-    <v-navigation-drawer
-      v-model="drawerLeft"
-      app
-      clipped
-      color=""
-    >
-      <the-side-bar
-        :link="getLink"
-        :role="getCurrentUserRole"
-      />
+    <v-navigation-drawer v-model="drawerLeft" app clipped color>
+      <the-side-bar :link="getLink" :role="getCurrentUserRole" />
     </v-navigation-drawer>
 
     <v-main>
-      <v-container
-        fluid
-        fill-height
-      >
-        <v-layout
-          justify-center
-        >
+      <v-container fluid fill-height>
+        <v-layout justify-center>
           <v-flex fill-height>
             <nuxt />
           </v-flex>
